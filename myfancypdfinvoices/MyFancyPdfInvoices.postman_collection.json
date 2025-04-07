@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "08caa384-b3e7-42ae-b820-cb9535b2ff9e",
+		"name": "MyFancyPdfInvoices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27229012"
+	},
+	"item": [
+		{
+			"name": "Add PDF",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/invoices?user_id=freddieFox2&amount=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"invoices"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "freddieFox2"
+						},
+						{
+							"key": "amount",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All PDFs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/invoices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"invoices"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
