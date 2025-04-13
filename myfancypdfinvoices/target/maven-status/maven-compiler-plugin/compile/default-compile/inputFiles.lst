@@ -1,4 +1,7 @@
+/Users/gauravgajavelli/Documents/GitHub/SpringLearning/myfancypdfinvoices/src/main/java/com/gauravgajavelli/myfancypdfinvoices/model/User.java
+/Users/gauravgajavelli/Documents/GitHub/SpringLearning/myfancypdfinvoices/src/main/java/com/gauravgajavelli/myfancypdfinvoices/context/Application.java
 /Users/gauravgajavelli/Documents/GitHub/SpringLearning/myfancypdfinvoices/src/main/java/com/gauravgajavelli/myfancypdfinvoices/ApplicationLauncher.java
 /Users/gauravgajavelli/Documents/GitHub/SpringLearning/myfancypdfinvoices/src/main/java/com/gauravgajavelli/myfancypdfinvoices/model/Invoice.java
+/Users/gauravgajavelli/Documents/GitHub/SpringLearning/myfancypdfinvoices/src/main/java/com/gauravgajavelli/myfancypdfinvoices/service/UserService.java
 /Users/gauravgajavelli/Documents/GitHub/SpringLearning/myfancypdfinvoices/src/main/java/com/gauravgajavelli/myfancypdfinvoices/service/InvoiceService.java
 /Users/gauravgajavelli/Documents/GitHub/SpringLearning/myfancypdfinvoices/src/main/java/com/gauravgajavelli/myfancypdfinvoices/web/MyFancyPdfInvoicesServlet.java

@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "69bf5dda-7750-4b02-89a6-9771420bf840",
+		"name": "MyBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27229012"
+	},
+	"item": [
+		{
+			"name": "Add Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/transactions?id=1&amount=50&timestamp=2007-12-03T10:15:30&reference=Hehehe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "amount",
+							"value": "50"
+						},
+						{
+							"key": "timestamp",
+							"value": "2007-12-03T10:15:30"
+						},
+						{
+							"key": "reference",
+							"value": "Hehehe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
