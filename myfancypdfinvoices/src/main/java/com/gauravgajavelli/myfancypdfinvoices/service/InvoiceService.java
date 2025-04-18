@@ -32,4 +32,8 @@ public class InvoiceService {
         invoices.add(invoice);
         return invoice;
     }
+
+    public UserService getUserService() {
+        return userService;
+    }
 }
