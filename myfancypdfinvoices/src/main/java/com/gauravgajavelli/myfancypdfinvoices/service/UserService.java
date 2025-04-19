@@ -1,8 +1,10 @@
 package com.gauravgajavelli.myfancypdfinvoices.service;
 import com.gauravgajavelli.myfancypdfinvoices.model.User;
+import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
+@Component
 public class UserService {
 
     public User findById(String id) {
