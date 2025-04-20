@@ -10,9 +10,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @Component
 public class InvoiceService {
 
-    private final UserService userService;
-
     private List<Invoice> invoices = new CopyOnWriteArrayList<>();
+
+    private final UserService userService;
 
     public InvoiceService(UserService userService) {
         this.userService = userService;
@@ -33,9 +33,5 @@ public class InvoiceService {
         Invoice invoice = new Invoice(userId, amount, "http://www.africau.edu/images/default/sample.pdf");
         invoices.add(invoice);
         return invoice;
-    }
-
-    public UserService getUserService() {
-        return userService;
     }
 }
