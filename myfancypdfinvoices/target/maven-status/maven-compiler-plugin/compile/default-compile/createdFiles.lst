@@ -5,3 +5,4 @@ com/gauravgajavelli/myfancypdfinvoices/service/InvoiceService.class
 com/gauravgajavelli/myfancypdfinvoices/model/User.class
 com/gauravgajavelli/myfancypdfinvoices/service/UserService.class
 com/gauravgajavelli/myfancypdfinvoices/context/MyFancyPdfInvoicesApplicationConfiguration.class
+com/gauravgajavelli/myfancypdfinvoices/service/DummyInvoiceServiceLoader.class
