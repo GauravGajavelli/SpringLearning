@@ -1,10 +1,12 @@
 package com.gauravgajavelli.mybank.service;
 
 import com.gauravgajavelli.mybank.model.Transaction;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+@Component
 public class TransactionService {
     private List<Transaction> transactions = new CopyOnWriteArrayList<>();
 
