@@ -1,4 +1,5 @@
 com/gauravgajavelli/mybank/context/Application.class
+com/gauravgajavelli/mybank/web/MyBankServlet$TransactionAndSlogan.class
 com/gauravgajavelli/mybank/Main.class
 com/gauravgajavelli/mybank/model/Transaction.class
 com/gauravgajavelli/mybank/web/MyBankServlet.class

@@ -16,4 +16,10 @@ public class Transaction {
         this.timestampTime = LocalDateTime.parse(timestamp);
         this.reference = reference;
     }
+    public Transaction(int id, int amount, LocalDateTime timestampTime, String reference) {
+        this.id = id;
+        this.amount = amount;
+        this.timestampTime = timestampTime;
+        this.reference = reference;
+    }
 }

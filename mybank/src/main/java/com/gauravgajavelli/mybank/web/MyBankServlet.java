@@ -14,6 +14,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyBankServlet extends HttpServlet {
@@ -26,6 +27,10 @@ public class MyBankServlet extends HttpServlet {
 
     private TransactionService transactionService;
     private ObjectMapper objectMapper;
+
+    @Value("bank.slogan")
+    private String slogan;
+
     @Override
     public void init() throws ServletException {
         AnnotationConfigApplicationContext ctx
@@ -50,8 +55,12 @@ public class MyBankServlet extends HttpServlet {
                             "</html>");
         } else if (request.getRequestURI().equalsIgnoreCase("/transactions")) {
             response.setContentType("application/json; charset=UTF-8");
-            List<Transaction> invoices = transactionService.findAll();
-            response.getWriter().print(objectMapper.writeValueAsString(invoices));
+            List<Transaction> transactions = transactionService.findAll();
+            List<TransactionAndSlogan> toWrite = new ArrayList<TransactionAndSlogan>();
+            for (Transaction transaction : transactions) {
+                toWrite.add(new TransactionAndSlogan(transaction, this.slogan));
+            }
+            response.getWriter().print(objectMapper.writeValueAsString(toWrite));
         }
     }
 
@@ -70,6 +79,14 @@ public class MyBankServlet extends HttpServlet {
             response.getWriter().print(json);
         } else {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
+    }
+
+    private class TransactionAndSlogan extends Transaction {
+        public String slogan;
+        public TransactionAndSlogan(Transaction transaction, String slogan) {
+            super(transaction.id, transaction.amount, transaction.timestampTime, transaction.reference);
+            this.slogan = slogan;
         }
     }
 }
