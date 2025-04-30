@@ -1,7 +1,8 @@
 com/gauravgajavelli/myfancypdfinvoices/web/MyFirstSpringController.class
 com/gauravgajavelli/myfancypdfinvoices/model/User.class
 com/gauravgajavelli/myfancypdfinvoices/service/DummyInvoiceServiceLoader.class
-com/gauravgajavelli/myfancypdfinvoices/web/MyFancyPdfInvoicesServlet.class
+com/gauravgajavelli/myfancypdfinvoices/dto/InvoiceDto.class
+com/gauravgajavelli/myfancypdfinvoices/web/MyFancyPdfInvoicesController.class
 com/gauravgajavelli/myfancypdfinvoices/ApplicationLauncher.class
 com/gauravgajavelli/myfancypdfinvoices/model/Invoice.class
 com/gauravgajavelli/myfancypdfinvoices/service/InvoiceService.class

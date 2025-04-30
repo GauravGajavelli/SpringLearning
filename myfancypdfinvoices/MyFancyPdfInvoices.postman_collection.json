@@ -53,6 +53,55 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Add PDF Path Variables",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/invoices/freddieFox2/50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"invoices",
+						"freddieFox2",
+						"50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add PDF JSON Body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 5000,\n    \"user_id\": \"someId\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/invoices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"invoices"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
