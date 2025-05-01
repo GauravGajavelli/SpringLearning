@@ -77,9 +77,20 @@
 		},
 		{
 			"name": "Add PDF JSON Body",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"amount\": 5000,\n    \"user_id\": \"someId\"\n}",
