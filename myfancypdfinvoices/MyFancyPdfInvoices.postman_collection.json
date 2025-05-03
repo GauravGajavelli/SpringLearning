@@ -36,6 +36,35 @@
 			"response": []
 		},
 		{
+			"name": "Add PDF Invalid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/invoices?user_id=freddieFox2&amount=49",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"invoices"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "freddieFox2"
+						},
+						{
+							"key": "amount",
+							"value": "49"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get All PDFs",
 			"request": {
 				"method": "GET",
