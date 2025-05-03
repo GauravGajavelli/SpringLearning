@@ -93,7 +93,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"amount\": 5000,\n    \"user_id\": \"someId\"\n}",
+					"raw": "{\n    \"amount\": 50,\n    \"user_id\": \"someId\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
