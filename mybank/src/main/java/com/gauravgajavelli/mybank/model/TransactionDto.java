@@ -1,5 +1,6 @@
 package com.gauravgajavelli.mybank.model;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -8,6 +9,7 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Valid
+@JacksonXmlRootElement(localName = "TransactionDto")
 public class TransactionDto {
 
     @Min(0)
@@ -38,11 +40,11 @@ public class TransactionDto {
         this.amount = amount;
     }
 
-    public LocalDateTime getTimestampTime() {
+    public LocalDateTime getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestampTime(LocalDateTime timestamp) {
+    public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
     }
 

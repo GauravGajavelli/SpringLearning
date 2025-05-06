@@ -53,20 +53,25 @@ public class Controller {
     public TransactionAndSlogan addTransaction(@RequestBody TransactionDto transaction) {
         Integer id = Integer.valueOf(transaction.getId());
         Integer amount = Integer.valueOf(transaction.getAmount());
-        String timestamp = String.valueOf(transaction.getTimestampTime());
+        String timestamp = String.valueOf(transaction.getTimestamp());
         String reference = transaction.getReference();
 
-        Transaction toRet = transactionService.create(id, amount, "2007-12-03T10:15:30", reference);
-        System.out.println("wakawaka"+toRet.timestampTime);
-
+        Transaction toRet = transactionService.create(id, amount, timestamp, reference);
         return new TransactionAndSlogan(toRet, timestamp);
     }
 
-    private class TransactionAndSlogan extends Transaction {
+    private class TransactionAndSlogan {
         public String slogan;
+        public int id;
+        public int amount;
+        public String timestampTime;
+        public String reference;
         public TransactionAndSlogan(Transaction transaction, String slogan) {
-            super(transaction.id, transaction.amount, transaction.timestampTime, transaction.reference);
             this.slogan = slogan;
+            this.id = transaction.id;
+            this.amount = transaction.amount;
+            this.timestampTime = String.valueOf(transaction.timestampTime);
+            this.reference = transaction.reference;
         }
     }
 }

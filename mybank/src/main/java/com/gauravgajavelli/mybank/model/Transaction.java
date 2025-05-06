@@ -13,11 +13,7 @@ public class Transaction {
     public Transaction(int id, int amount, String timestamp, String reference) {
         this.id = id;
         this.amount = amount;
-        System.out.println("Prinplup: "+id);
-        System.out.println("Prinplup: "+amount);
-        System.out.println("Prinplup: "+timestamp);
-        System.out.println("Prinplup: "+reference);
-        this.timestampTime = LocalDateTime.parse(timestamp); // 2007-12-03T10:15:30
+        this.timestampTime = LocalDateTime.parse(timestamp);
         this.reference = reference;
     }
     public Transaction(int id, int amount, LocalDateTime timestampTime, String reference) {
