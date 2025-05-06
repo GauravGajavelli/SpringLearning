@@ -44,6 +44,45 @@
 			"response": []
 		},
 		{
+			"name": "Invalid Add Transaction JSON Body",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":-1,\n\"amount\":50,\n\"timestamp\":\"2008-12-03T10:15:30\",\n\"reference\":\"\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Add Transaction JSON Body",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {

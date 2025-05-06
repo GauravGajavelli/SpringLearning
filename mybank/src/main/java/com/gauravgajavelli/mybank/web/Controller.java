@@ -5,6 +5,7 @@ import com.gauravgajavelli.mybank.Main;
 import com.gauravgajavelli.mybank.model.TransactionDto;
 import com.gauravgajavelli.mybank.service.TransactionService;
 import com.gauravgajavelli.mybank.model.Transaction;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.ComponentScan;
@@ -50,14 +51,14 @@ public class Controller {
     }
 
     @PostMapping(value = "/transactions", consumes = { "application/json", "application/xml" })
-    public TransactionAndSlogan addTransaction(@RequestBody TransactionDto transaction) {
+    public TransactionAndSlogan addTransaction(@RequestBody @Valid TransactionDto transaction) {
         Integer id = Integer.valueOf(transaction.getId());
         Integer amount = Integer.valueOf(transaction.getAmount());
         String timestamp = String.valueOf(transaction.getTimestamp());
         String reference = transaction.getReference();
 
         Transaction toRet = transactionService.create(id, amount, timestamp, reference);
-        return new TransactionAndSlogan(toRet, timestamp);
+        return new TransactionAndSlogan(toRet, slogan);
     }
 
     private class TransactionAndSlogan {

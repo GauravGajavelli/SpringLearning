@@ -8,7 +8,6 @@ import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
-@Valid
 @JacksonXmlRootElement(localName = "TransactionDto")
 public class TransactionDto {
 
