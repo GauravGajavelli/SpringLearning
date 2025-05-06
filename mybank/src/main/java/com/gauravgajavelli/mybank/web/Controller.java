@@ -1,16 +1,21 @@
 package com.gauravgajavelli.mybank.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gauravgajavelli.mybank.Main;
 import com.gauravgajavelli.mybank.model.TransactionDto;
 import com.gauravgajavelli.mybank.service.TransactionService;
 import com.gauravgajavelli.mybank.model.Transaction;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cglib.core.Local;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +32,7 @@ public class Controller {
     private TransactionService transactionService;
     private ObjectMapper objectMapper;
 
-    @Value("bank.slogan")
+    @Value("${bank.slogan}")
     private String slogan;
 
     public Controller(TransactionService invoiceService) {
@@ -44,14 +49,16 @@ public class Controller {
         return toWrite;
     }
 
-    @PostMapping("/transactions")
+    @PostMapping(value = "/transactions", consumes = { "application/json", "application/xml" })
     public TransactionAndSlogan addTransaction(@RequestBody TransactionDto transaction) {
         Integer id = Integer.valueOf(transaction.getId());
         Integer amount = Integer.valueOf(transaction.getAmount());
         String timestamp = String.valueOf(transaction.getTimestampTime());
         String reference = transaction.getReference();
 
-        Transaction toRet = transactionService.create(id, amount, timestamp, reference);
+        Transaction toRet = transactionService.create(id, amount, "2007-12-03T10:15:30", reference);
+        System.out.println("wakawaka"+toRet.timestampTime);
+
         return new TransactionAndSlogan(toRet, timestamp);
     }
 

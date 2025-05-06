@@ -17,7 +17,7 @@ public class TransactionDto {
     private int amount;
 
     @NotNull
-    private String timestamp;
+    private LocalDateTime timestamp;
 
     @NotEmpty
     private String reference;
@@ -38,11 +38,11 @@ public class TransactionDto {
         this.amount = amount;
     }
 
-    public String getTimestampTime() {
+    public LocalDateTime getTimestampTime() {
         return timestamp;
     }
 
-    public void setTimestampTime(String timestamp) {
+    public void setTimestampTime(LocalDateTime timestamp) {
         this.timestamp = timestamp;
     }
 
