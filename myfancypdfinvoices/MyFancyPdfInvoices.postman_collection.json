@@ -142,6 +142,25 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get Homepage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

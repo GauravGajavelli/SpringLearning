@@ -1,6 +1,6 @@
 com/gauravgajavelli/myfancypdfinvoices/web/Controller.class
+com/gauravgajavelli/myfancypdfinvoices/web/WebsiteController.class
 com/gauravgajavelli/myfancypdfinvoices/web/GlobalExceptionHandler.class
-com/gauravgajavelli/myfancypdfinvoices/web/MyFirstSpringController.class
 com/gauravgajavelli/myfancypdfinvoices/model/User.class
 com/gauravgajavelli/myfancypdfinvoices/service/DummyInvoiceServiceLoader.class
 com/gauravgajavelli/myfancypdfinvoices/context/Configuration.class
