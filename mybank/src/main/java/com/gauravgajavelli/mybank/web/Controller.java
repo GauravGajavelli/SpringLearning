@@ -10,11 +10,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -48,6 +46,12 @@ public class Controller {
             toWrite.add(new TransactionAndSlogan(transaction, this.slogan));
         }
         return toWrite;
+    }
+
+    @GetMapping("/account/{userId}")
+    public String getAccount(Model model, @PathVariable int userId) {
+        model.addAttribute("transactions", transactionService.getAccount(userId));
+        return "account.html";
     }
 
     @PostMapping(value = "/transactions", consumes = { "application/json", "application/xml" })

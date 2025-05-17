@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Collectors;
 
 @Component
 public class TransactionService {
@@ -15,6 +16,11 @@ public class TransactionService {
 
     public List<Transaction> findAll() {
         return transactions;
+    }
+    public List<Transaction> getAccount(int id) {
+        return transactions.stream()
+                .filter(t -> t.id == id)
+                .collect(Collectors.toList());
     }
 
     public Transaction create(int id, int amount, String timestamp, String reference) {
