@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Transactions for </title>
+    <title>Account</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
   <table>
     <thead>
     <tr>
@@ -11,11 +13,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="transaction : ${transaction}">
-<!--          public int id;
-    public int amount;
-    public LocalDateTime timestampTime;
-    public String reference;-->
+    <tr th:each="transaction : ${transactions}">
       <td><span th:text="${transaction.id}"> Id </span></td>
       <td><span th:text="${transaction.amount}"> Amount </span></td>
 
@@ -24,7 +22,6 @@
     </tr>
     </tbody>
   </table>
-</head>
 <body>
 
 </body>

@@ -37,6 +37,7 @@ public class Application {
     public ThymeleafViewResolver viewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
+        System.out.println("Yayaya");
 
         viewResolver.setOrder(1); // optional
         viewResolver.setViewNames(new String[] {"*.html", "*.xhtml"}); // optional

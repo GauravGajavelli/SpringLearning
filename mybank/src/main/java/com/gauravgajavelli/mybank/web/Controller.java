@@ -48,12 +48,6 @@ public class Controller {
         return toWrite;
     }
 
-    @GetMapping("/account/{userId}")
-    public String getAccount(Model model, @PathVariable int userId) {
-        model.addAttribute("transactions", transactionService.getAccount(userId));
-        return "account.html";
-    }
-
     @PostMapping(value = "/transactions", consumes = { "application/json", "application/xml" })
     public TransactionAndSlogan addTransaction(@RequestBody @Valid TransactionDto transaction) {
         Integer id = Integer.valueOf(transaction.getId());
