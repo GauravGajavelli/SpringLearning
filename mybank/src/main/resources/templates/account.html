@@ -22,6 +22,22 @@
     </tr>
     </tbody>
   </table>
+<form th:action="@{/account}" th:object="${transactionForm}" method="post">
+
+  <p>Id: <input type="number" th:field="*{id}"/></p>
+  <p style="background-color:red" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></p>
+
+  <p>Amount: <input type="number" th:field="*{amount}"/></p>
+  <p style="background-color:red" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></p>
+
+  <p>Id: <input type="text" th:field="*{timestampTime}"/></p>
+  <p style="background-color:red" th:if="${#fields.hasErrors('timestampTime')}" th:errors="*{timestampTime}"></p>
+
+  <p>Amount: <input type="text" th:field="*{reference}"/></p>
+  <p style="background-color:red" th:if="${#fields.hasErrors('reference')}" th:errors="*{reference}"></p>
+
+  <p><input type="submit" value="Submit"/></p>
+</form>
 <body>
 
 </body>
