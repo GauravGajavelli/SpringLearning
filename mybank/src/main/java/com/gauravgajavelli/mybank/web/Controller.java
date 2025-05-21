@@ -1,20 +1,14 @@
 package com.gauravgajavelli.mybank.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gauravgajavelli.mybank.Main;
-import com.gauravgajavelli.mybank.model.TransactionDto;
+import com.gauravgajavelli.mybank.web.forms.TransactionDto;
 import com.gauravgajavelli.mybank.service.TransactionService;
 import com.gauravgajavelli.mybank.model.Transaction;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cglib.core.Local;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 

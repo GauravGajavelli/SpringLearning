@@ -1,7 +1,6 @@
-package com.gauravgajavelli.mybank.model;
+package com.gauravgajavelli.mybank.web.forms;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
