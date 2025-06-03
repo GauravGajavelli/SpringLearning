@@ -23,6 +23,16 @@ public class TransactionService {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    /*
+    create table if not exists transactions
+(
+    id int default floor(rand()*2147483647) primary key,
+    time_stamp timestamp,
+    reference varchar(255),
+    amount  int
+    );
+    * */
+
     public List<Transaction> findAll() {
         System.out.println("Is a database transaction open? = " + TransactionSynchronizationManager.isActualTransactionActive());
         return jdbcTemplate.query("select id, time_stamp, reference, amount from transactions", (resultSet, rowNum) -> {
@@ -34,39 +44,39 @@ public class TransactionService {
         });
     }
     public List<Transaction> getAccount(int id) {
-        return jdbcTemplate.query("select id, time_stamp, reference, amount from transactions where ", (resultSet, rowNum) -> {
-            Transaction transaction = new Transaction(resultSet.getInt("id"),
-                    resultSet.getInt("amount"),
-                    resultSet.getObject("time_stamp", LocalDateTime.class),
-                    resultSet.getString("reference"));
-            return transaction;
-        });
+        String sql = """
+        SELECT id, time_stamp, reference, amount
+        FROM transactions
+        WHERE id = ?
+        """;
+
+        List<Transaction> rows = jdbcTemplate.query(
+                sql,
+                new Object[] { id },          // binds the ? to your id value
+                (resultSet, rowNum) -> new Transaction(
+                        resultSet.getInt("id"),
+                        resultSet.getInt("amount"),
+                        resultSet.getObject("time_stamp", LocalDateTime.class),
+                        resultSet.getString("reference")
+                )
+        );
+
+        return rows; // or throw if you expect exactly one
+
     }
 
     public Transaction create(int id, int amount, String timestamp, String reference) {
-                /*
-create table if not exists transactions
-(
-    id      uuid  default random_uuid() primary key,
-    time_stamp timestamp,
-    reference varchar(255),
-    amount  int
-    );
-    * */
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection
-                    .prepareStatement("insert into transactions (id, time_stamp, reference, amount) values (?, ?, ?)",
+                    .prepareStatement("insert into transactions (time_stamp, reference, amount) values (?, ?, ?)",
                             Statement.RETURN_GENERATED_KEYS);
             ps.setObject(1, LocalDateTime.parse(timestamp), java.sql.JDBCType.TIMESTAMP);
             ps.setString(2, reference);
             ps.setInt(3, amount);
             return ps;
         }, keyHolder);
-
-        String uuid = !keyHolder.getKeys().isEmpty() ? ((UUID) keyHolder.getKeys().values().iterator().next()).toString()
-                : null;
 
         Transaction transaction = new Transaction(id, amount, timestamp, reference);
         return transaction;
