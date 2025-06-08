@@ -1,5 +1,5 @@
 package com.gauravgajavelli.myfancypdfinvoices.springboot.service;
-import com.gauravgajavelli.myfancypdfinvoices.model.User;
+import com.gauravgajavelli.myfancypdfinvoices.springboot.model.User;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
